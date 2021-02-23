@@ -1,16 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
-var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
+var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 0530);
+app.set('port', 5030);
 
 app.get('/get-or-post',function(req,res){
   var params = [];
