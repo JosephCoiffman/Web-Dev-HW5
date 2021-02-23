@@ -11,7 +11,7 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 5030);
 
-app.get('/get-or-post',function(req,res){
+app.get('/',function(req,res){
   var params = [];
   for (var p in req.query){
     params.push({'name':p,'value':req.query[p]})
@@ -21,7 +21,7 @@ app.get('/get-or-post',function(req,res){
   res.render('get', context);
 });
 
-app.post('/get-or-post', function(req,res){
+app.post('/', function(req,res){
   var badyParams = [];
   for (var p in req.query){
     params.push({'name':p,'value':req.query[p]})
